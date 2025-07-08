@@ -2,12 +2,12 @@ name: Schedule job
 
 on:
   schedule:
-      cron: "0 0 * * *"
+    - cron: "0 0 * * *"  # Runs daily at midnight (UTC)
 
-jons:
+jobs:  # Corrected typo from 'jons' to 'jobs'
   run-script:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Corrected from 'run-on' to 'runs-on'
 
     steps:
-      name: Print message
-      run: echo "schedule Workflow Executed"
+      - name: Print message  # Indented correctly under step
+        run: echo "Scheduled Workflow Executed"
